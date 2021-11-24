@@ -15,13 +15,7 @@ export default function Home() {
     setHomeTheme(homeTheme === themes.dark ? themes.light : themes.dark);
   };
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundColor: homeTheme.background,
-        color: homeTheme.foreground,
-      }}
-    >
+    <div className={styles.container}>
       <ThemeContext.Provider value={homeTheme}>
         <Toolbar changeTheme={toggleTheme} />
       </ThemeContext.Provider>
@@ -31,7 +25,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main
+        className={styles.main}
+        style={{
+          backgroundColor: homeTheme.background,
+          color: homeTheme.foreground,
+        }}
+      >
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
