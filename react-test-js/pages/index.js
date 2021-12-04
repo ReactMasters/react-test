@@ -25,7 +25,7 @@ export default function Home() {
             <Toolbar changeTheme={toggleTheme} />
           </ThemeContext.Provider>
           <ThemedButton />
-          <Clock />
+          <Clock showClock={true} />
         </>
       }
       nexts={
