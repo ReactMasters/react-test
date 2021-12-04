@@ -28,20 +28,22 @@ class Clock extends React.Component {
     });
   }
   componentDidMount() {
+    // rendering null still keeps doing component lifecycle.
+    console.log("componentDidMount-Clock.js triggered");
     this.timerID = setInterval(() => this.tick(), 1000);
   }
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
   render() {
-    return (
+    return this.props.showClock ? (
       <div>
         <h1>Hello World</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
         <p>Apple: {this.state.testObj.apple}</p>
         <p>Banana: {this.state.testObj.banana}</p>
       </div>
-    );
+    ) : null;
   }
 }
 
