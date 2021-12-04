@@ -6,6 +6,7 @@ import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import HomeLayout from "../components/templates/homeLayout";
 import Clock from "../components/modules/Clock";
+import EventTestButton from "../components/modules/EventTestButton";
 
 function Toolbar(props) {
   return <ThemedButton onClick={props.changeTheme}>Change Theme</ThemedButton>;
@@ -26,6 +27,7 @@ export default function Home() {
           </ThemeContext.Provider>
           <ThemedButton />
           <Clock showClock={true} />
+          <EventTestButton />
         </>
       }
       nexts={
