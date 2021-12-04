@@ -17,8 +17,16 @@ class EventTestButton extends Component {
   }
 
   handleWithBinding() {
-    this.setState((state) => ({ isBindingBtnOn: !state.isBindinbBtnOn }));
+    this.setState((state) => ({ isBindingBtnOn: !state.isBindingBtnOn }));
   }
+
+  handleWithExperiemtalSyntax = () => {
+    this.setState((state) => {
+      return {
+        isBindingBtnOn: !state.isBindingBtnOn,
+      };
+    });
+  };
   handleSubmit(e) {
     e.preventDefault();
     console.log("handleSubmit triggered");
@@ -32,6 +40,9 @@ class EventTestButton extends Component {
         </button>
         <button type="submit" onClick={this.handleWithBinding}>
           Turn BoundBtn {this.state.isBindingBtnOn ? "OFF" : "ON"} & Submit!
+        </button>
+        <button type="button" onClick={this.handleWithExperiemtalSyntax}>
+          Turn ExperiemtalSyntaxBtn {this.state.isBindingBtnOn ? "OFF" : "ON"}
         </button>
       </form>
     );
