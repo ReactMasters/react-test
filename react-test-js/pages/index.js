@@ -1,10 +1,11 @@
 import { ThemeContext, themes } from "../lib/themeContext";
-import ThemedButton from "../components/themedButton";
+import ThemedButton from "../components/modules/ThemedButton";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import HomeLayout from "../components/templates/homeLayout";
+import Clock from "../components/modules/Clock";
 
 function Toolbar(props) {
   return <ThemedButton onClick={props.changeTheme}>Change Theme</ThemedButton>;
@@ -24,6 +25,7 @@ export default function Home() {
             <Toolbar changeTheme={toggleTheme} />
           </ThemeContext.Provider>
           <ThemedButton />
+          <Clock />
         </>
       }
       nexts={
